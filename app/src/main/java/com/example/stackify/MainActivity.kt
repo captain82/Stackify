@@ -1,13 +1,11 @@
 package com.example.stackify
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.credit_amount_layout.*
 import kotlinx.android.synthetic.main.select_bank_layout.*
 import java.util.*

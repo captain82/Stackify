@@ -16,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="800dp"
         app:behavior_peekHeight="55dp"
-        android:background="#124356"
+        android:backgroundTint="#d1ebd4"
+        android:background="@drawable/rounded_rectangle_top"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
         <TextView
@@ -24,13 +25,45 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:text="Select your bank "
-            android:textColor="#000000"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            android:textColor="#75c380"
+            android:textSize="15dp"
             android:id="@+id/selectBankButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/bankNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectBankButton"
+            android:layout_marginStart="30dp"
+            android:text="HDFC BANK"
+            android:textColor="#75c380"
+            />
+
+        <TextView
+            android:id="@+id/accountNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/bankNameTextView"
+            app:layout_constraintStart_toStartOf="@id/bankNameTextView"
+            android:textColor="#75c380"
+            android:textSize="12dp"
+            android:text="50100117009192"
+            />
+
+        <CheckBox
+            app:layout_constraintTop_toTopOf="@id/bankNameTextView"
+            app:layout_constraintBottom_toBottomOf="@id/bankNameTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="#75c380"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

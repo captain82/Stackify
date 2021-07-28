@@ -15,7 +15,8 @@
         android:id="@+id/pleasePayBottomSheet"
         android:layout_width="match_parent"
         android:layout_height="800dp"
-        android:background="#765678"
+        android:background="@drawable/rounded_rectangle_top"
+        android:backgroundTint="#ffe5e7"
         app:behavior_peekHeight="55dp"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
@@ -24,13 +25,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="Please pay"
-            android:textColor="#000000"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            android:text="How do you wish to repay?"
+            android:textColor="#ff7481"
+            android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/container1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/rounded_border_grey"
+            android:backgroundTint="#ff7481"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toStartOf="@id/container2"
+            app:layout_constraintTop_toBottomOf="@id/pleasePay"
+            />
+
+        <View
+            android:id="@+id/container2"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toEndOf="@id/container1"
+            android:background="@drawable/rounded_border_grey"
+            android:backgroundTint="#ff7481"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pleasePay"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

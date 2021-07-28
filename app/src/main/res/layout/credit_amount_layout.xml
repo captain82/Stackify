@@ -15,7 +15,9 @@
         android:layout_height="500dp"
         app:behavior_peekHeight="55dp"
         android:focusable="true"
-        android:background="#746373"
+        android:elevation="10dp"
+        android:backgroundTint="#cce0ff"
+        android:background="@drawable/rounded_rectangle_top"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
         <TextView
@@ -23,15 +25,38 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:id="@+id/proceedToEmiButton"
-            android:text="Proceed to Emi Selection"
-            android:textColor="#000000"
-            android:textSize="20dp"
-            android:textStyle="bold"
+            android:text="Hey Captain,How much do you need?"
+            android:textColor="#027bff"
+            android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <View
+            android:id="@+id/outlineView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/proceedToEmiButton"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="#027bff"
+            android:background="@drawable/rounded_border_grey"
+            />
 
+        <TextView
+            android:id="@+id/creditAmountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/outlineView"
+            app:layout_constraintEnd_toEndOf="@id/outlineView"
+            app:layout_constraintTop_toTopOf="@id/outlineView"
+            android:textColor="#027bff"
+            app:layout_constraintBottom_toBottomOf="@id/outlineView"
+            android:text="$1,50,000"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

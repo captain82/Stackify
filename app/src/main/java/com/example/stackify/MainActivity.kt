@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.credit_amount_layout.*
+import kotlinx.android.synthetic.main.pay_layout.*
 import kotlinx.android.synthetic.main.select_bank_layout.*
 import java.util.*
 
@@ -27,8 +28,8 @@ class MainActivity : AppCompatActivity() {
 
         proceedToEmiButton.setOnClickListener {
             creditAmountBottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-            addViewToStack(R.layout.select_bank_layout, "BANK-LAYOUT", 2)
-            bankBottomSheet = BottomSheetBehavior.from(selectBankBottomSheetLayout)
+            addViewToStack(R.layout.pay_layout, "BANK-LAYOUT", 2)
+            bankBottomSheet = BottomSheetBehavior.from(pleasePayBottomSheet)
         }
 
        /* selectBankButton.setOnClickListener {

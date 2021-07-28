@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/rounded_border_grey.xml" value="0.2361111111111111" />
+        <entry key="app/src/main/res/drawable/rounded_rectangle_top.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/bottom_sheet_layout.xml" value="0.1503623188405797" />
+        <entry key="app/src/main/res/layout/credit_amount_layout.xml" value="0.165" />
         <entry key="app/src/main/res/layout/emi_selection_layout.xml" value="0.1503623188405797" />
-        <entry key="app/src/main/res/layout/pay_layout.xml" value="0.10208333333333333" />
+        <entry key="app/src/main/res/layout/pay_layout.xml" value="0.335" />
         <entry key="app/src/main/res/layout/select_bank_layout.xml" value="0.1503623188405797" />
       </map>
     </option>

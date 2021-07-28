@@ -35,7 +35,7 @@
         <View
             android:id="@+id/container1"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="140dp"
             app:layout_constraintStart_toStartOf="parent"
             android:background="@drawable/rounded_border_grey"
             android:backgroundTint="#ff7481"
@@ -43,13 +43,45 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toStartOf="@id/container2"
-            app:layout_constraintTop_toBottomOf="@id/pleasePay"
+            app:layout_constraintTop_toBottomOf="@id/pleasePay" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="@id/amountTextView"
+            app:layout_constraintBottom_toTopOf="@id/amountTextView"
+            android:layout_marginBottom="8dp"
+            app:tint="#fe0a39"
+            android:src="@drawable/circle_shape"
             />
+
+        <TextView
+            android:id="@+id/amountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:text="$3456 / mo"
+            android:textColor="#ff7481"
+            app:layout_constraintBottom_toTopOf="@id/durationTextView"
+            app:layout_constraintStart_toStartOf="@id/container1" />
+
+        <TextView
+            android:id="@+id/durationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="20dp"
+            android:text="for 12 months"
+            android:textColor="#ff7481"
+            app:layout_constraintBottom_toBottomOf="@id/container1"
+            app:layout_constraintStart_toStartOf="@id/container1" />
 
         <View
             android:id="@+id/container2"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="140dp"
             app:layout_constraintStart_toEndOf="@id/container1"
             android:background="@drawable/rounded_border_grey"
             android:backgroundTint="#ff7481"
@@ -59,6 +91,40 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pleasePay"
             />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="@id/amountTextView2"
+            app:layout_constraintBottom_toTopOf="@id/amountTextView2"
+            android:layout_marginBottom="8dp"
+            app:tint="#fe0a39"
+            android:src="@drawable/verified"
+            />
+
+        <TextView
+            android:id="@+id/amountTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:text="$3456 / mo"
+            android:textColor="#ff7481"
+            app:layout_constraintBottom_toTopOf="@id/durationTextView2"
+            app:layout_constraintStart_toStartOf="@id/container2" />
+
+        <TextView
+            android:id="@+id/durationTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="20dp"
+            android:text="for 12 months"
+            android:textColor="#ff7481"
+            app:layout_constraintBottom_toBottomOf="@id/container2"
+            app:layout_constraintStart_toStartOf="@id/container2" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

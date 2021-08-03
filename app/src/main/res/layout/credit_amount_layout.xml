@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
+            android:fontFamily="@font/roboto_mono"
             android:id="@+id/proceedToEmiButton"
             android:text="Hey Captain,How much do you need?"
             android:textColor="#027bff"
@@ -54,8 +55,18 @@
             app:layout_constraintEnd_toEndOf="@id/outlineView"
             app:layout_constraintTop_toTopOf="@id/outlineView"
             android:textColor="#027bff"
+            android:fontFamily="@font/roboto_mono"
             app:layout_constraintBottom_toBottomOf="@id/outlineView"
             android:text="$1,50,000"
+            />
+
+        <RelativeLayout
+            android:id="@+id/relativeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/proceedToEmiButton"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

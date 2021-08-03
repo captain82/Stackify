@@ -9,6 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_mono"
         android:text="Please pay" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
+            android:fontFamily="@font/roboto_mono"
             android:text="How do you wish to repay?"
             android:textColor="#ff7481"
             android:textSize="15dp"
@@ -63,6 +65,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="4dp"
             android:text="$3456 / mo"
+            android:fontFamily="@font/roboto_mono"
             android:textColor="#ff7481"
             app:layout_constraintBottom_toTopOf="@id/durationTextView"
             app:layout_constraintStart_toStartOf="@id/container1" />
@@ -74,6 +77,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="20dp"
             android:text="for 12 months"
+            android:fontFamily="@font/roboto_mono"
             android:textColor="#ff7481"
             app:layout_constraintBottom_toBottomOf="@id/container1"
             app:layout_constraintStart_toStartOf="@id/container1" />
@@ -111,6 +115,7 @@
             android:layout_marginBottom="4dp"
             android:text="$3456 / mo"
             android:textColor="#ff7481"
+            android:fontFamily="@font/roboto_mono"
             app:layout_constraintBottom_toTopOf="@id/durationTextView2"
             app:layout_constraintStart_toStartOf="@id/container2" />
 
@@ -122,6 +127,7 @@
             android:layout_marginBottom="20dp"
             android:text="for 12 months"
             android:textColor="#ff7481"
+            android:fontFamily="@font/roboto_mono"
             app:layout_constraintBottom_toBottomOf="@id/container2"
             app:layout_constraintStart_toStartOf="@id/container2" />
 

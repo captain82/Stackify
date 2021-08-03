@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mainLayout"
     tools:context=".MainActivity">
 
@@ -11,12 +11,18 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="button"
+        android:layout_gravity="center_horizontal"
         android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:clickable="false"
+        android:textColor="@color/black"
+        android:tint="#d1ebd4"
+        android:background="@drawable/rounded_border_grey"
+        android:fontFamily="@font/roboto_mono"
+        android:text="Hey 👋 \n Click the bottom card to start the payment process."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="60dp"
-        />
+        android:textAllCaps="false" />
 
 </FrameLayout>

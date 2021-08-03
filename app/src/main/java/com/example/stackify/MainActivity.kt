@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var parentLayout: FrameLayout
     private lateinit var creditAmountBottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private lateinit var bankBottomSheet: BottomSheetBehavior<ConstraintLayout>
+    private lateinit var paymentBottomSheet: BottomSheetBehavior<ConstraintLayout>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,82 +26,74 @@ class MainActivity : AppCompatActivity() {
         parentLayout = findViewById<View>(R.id.mainLayout) as FrameLayout
         addViewToStack(R.layout.credit_amount_layout, "CREDIT-LAYOUT", 1)
         creditAmountBottomSheetBehavior = BottomSheetBehavior.from(proceedToEmiBottomSheet)
-
         proceedToEmiButton.setOnClickListener {
+            if (viewStack.isEmpty())
+                viewStack.add(ViewState("CREDIT-LAYOUT", 1))
             creditAmountBottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-            addViewToStack(R.layout.pay_layout, "BANK-LAYOUT", 2)
-            bankBottomSheet = BottomSheetBehavior.from(pleasePayBottomSheet)
+            creditAmountBottomSheetBehavior.isDraggable = false
+            addViewToStack(R.layout.pay_layout, "PAYMENT-LAYOUT", 2)
+            paymentBottomSheet = BottomSheetBehavior.from(pleasePayBottomSheet)
         }
 
-       /* selectBankButton.setOnClickListener {
-            bankBottomSheet.state = BottomSheetBehavior.STATE_EXPANDED
-            addViewToStack(R.layout.pay_layout, "PAY-LAYOUT", 3)
-        }*/
-
-        /*creditBottomSheetLayout.addBottomSheetCallback(object :
+        creditAmountBottomSheetBehavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
-
-            override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                // handle onSlide
-            }
-
             override fun onStateChanged(bottomSheet: View, newState: Int) {
-                when (newState) {
-                    BottomSheetBehavior.STATE_COLLAPSED -> {
-                        Log.i("collapsed", "true")
-                    }
-                    BottomSheetBehavior.STATE_EXPANDED -> {
-                        creditBottomSheetLayout.isDraggable = true
-                        creditBottomSheetLayout.isHideable = false
-                        *//* stub1.layoutResource = R.layout.select_bank_layout
-                         stub1.inflate()*//*
+                if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+                    pleasePay.setOnClickListener {
+                        viewStack.add(ViewState("PAYMENT-LAYOUT", 2))
+                        paymentBottomSheet.expandedOffset = 1250
+                        paymentBottomSheet.isFitToContents = false
+                        paymentBottomSheet.isDraggable = false
+                        paymentBottomSheet.state = BottomSheetBehavior.STATE_EXPANDED
+                        addViewToStack(R.layout.select_bank_layout, "BANK_LAYOUT", 3)
+                        bankBottomSheet = BottomSheetBehavior.from(selectBankBottomSheetLayout)
+                        bankBottomSheet.isDraggable = false
 
-                        layoutInflater.inflate(R.layout.select_bank_layout, parentLayout, true)
-
-                        selectBankButton.setOnClickListener {
-                            selectbank.state = BottomSheetBehavior.STATE_EXPANDED
-                        }
-                        selectbank.addBottomSheetCallback(object :
+                        paymentBottomSheet.addBottomSheetCallback(object :
                             BottomSheetBehavior.BottomSheetCallback() {
-
-                            override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                                    // handle onSlide
-                                }
-
-                                override fun onStateChanged(bottomSheet: View, newState: Int) {
-                                    when (newState) {
-                                        BottomSheetBehavior.STATE_COLLAPSED -> {
-                                            //Log.i("collapsed", "true")
-                                        }
-                                        BottomSheetBehavior.STATE_EXPANDED -> {
-                                            Log.i("pay", "true")
-                                            *//* stub2.layoutResource = R.layout.pay_layout
-                                             stub2.inflate()*//*
-                                            layoutInflater.inflate(
-                                                R.layout.pay_layout,
-                                                parentLayout,
-                                                true
-                                            )
-                                            Thread.sleep(2000)
-                                            parentLayout.removeViewAt(2)
-                                        }
+                            override fun onStateChanged(bottomSheet: View, newState: Int) {
+                                if (newState == BottomSheetBehavior.STATE_EXPANDED) {
+                                    selectBankButton.setOnClickListener {
+                                        viewStack.add(ViewState("BANK_LAYOUT", 3))
+                                        bankBottomSheet.expandedOffset = 1450
+                                        bankBottomSheet.isFitToContents = false
+                                        bankBottomSheet.state = BottomSheetBehavior.STATE_EXPANDED
                                     }
                                 }
+                            }
+
+                            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+
+                            }
                         })
                     }
                 }
             }
-        })*/
+
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {
+            }
+        })
     }
 
     private fun addViewToStack(layout: Int, viewTag: String, position: Int) {
         layoutInflater.inflate(layout, parentLayout, true)
-        viewStack.add(ViewState(viewTag, position))
     }
 
     private fun popViewFromStack() {
         val poppedView = viewStack.pop().id
-        parentLayout.removeViewAt(poppedView)
+        when (poppedView) {
+            1 -> {
+                creditAmountBottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+                parentLayout.removeViewAt(2)
+            }
+            2 -> {
+                paymentBottomSheet.state = BottomSheetBehavior.STATE_COLLAPSED
+                parentLayout.removeViewAt(3)
+            }
+            3 -> {
+                bankBottomSheet.state = BottomSheetBehavior.STATE_COLLAPSED
+            }
+        }
     }
 
     override fun onBackPressed() {
